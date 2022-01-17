@@ -25,8 +25,11 @@ function demoInfo(sample)
         Object.entries(resultData).forEach(([key, value]) =>{
             // add to the sample data / demographics section
             d3.select("#sample-metadata")
-            .append("h5").text(`${key}: ${value}`);
+                .append("h5").text(`${key}: ${value}`);
         });
+
+        // use the metadata to build the gauge
+        buildGauge(result);
     });
 }
 
